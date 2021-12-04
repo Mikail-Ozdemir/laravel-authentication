@@ -12,15 +12,16 @@ class TestController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('bar');
+        //$this->middleware('auth')->except('bar');
     }
 
     public function foo()
     {
-        if(!Gate::allows('access-admin')){
-            abort('403');
-        }
-        return view('test.foo');
+       // if(!Gate::allows('access-admin')){
+       //     abort('403');
+      //  }
+      //  return view('test.foo');
+        return 'foo';
     }
 
     public function bar()
@@ -28,8 +29,9 @@ class TestController extends Controller
        // $user = ['email' => 'user@test.com', 'name' => 'monsieur truc'];
 
       //  Mail::to($user['email'])->send(new TestMail($user));
-        Mail::to('test@gmail.com')->send(new TestMarkdownMail());
+       // Mail::to('test@gmail.com')->send(new TestMarkdownMail());
 
-        return view('test.bar');
+     //   return view('test.bar');
+        return 'bar';
     }
 }
